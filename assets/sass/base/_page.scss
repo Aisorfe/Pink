@@ -1,0 +1,33 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+* {
+  outline: none;
+}
+
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+html, body {
+  min-width: 320px;
+  height: 100%;
+}
+
+body {
+  background-color: _color(bg);
+
+  &.is-loading {
+    *, *:before, *:after {
+      @include animation('none !important');
+      @include transition('none !important');
+    }
+  }
+}
+
+.page-wrapper {
+  position: relative;
+
+  min-height: 100%;
+}

@@ -1,0 +1,67 @@
+html, body, input, select, textarea {
+  font-family: _fonts(family);
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: _color(fg);
+
+  @include breakpoint(large) {
+    font-size: 18px;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  color: _color(accent);
+  
+  &:hover {
+    color: _color(dark);
+    border-bottom: 1px solid transparentize(_color(dark), .5);
+  }
+
+  &:active {
+    color: transparentize(_color(dark), .7);
+    border-bottom: none;
+  }
+}
+
+.inner-link {
+  text-decoration: underline;
+
+  &:hover {
+    border: none;
+  }
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.25;
+
+  @include breakpoint(medium) {
+    font-size: 40px;
+  }
+
+  @include breakpoint(large) {
+    font-size: 50px;
+  }
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h2 {
+  @include breakpoint(medium) {
+    font-size: 30px;
+  }
+}
+
+h3 {
+  @include breakpoint(large) {
+    font-size: 30px;
+  }
+}

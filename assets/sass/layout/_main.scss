@@ -1,0 +1,156 @@
+.app-slogan {
+  position: relative;
+  z-index: -1;
+
+  padding-top: 30px;
+  padding-bottom: 48px;
+
+  text-align: center;
+
+  background-color: #fff;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    border-right: 100vw solid #f2f2f2;
+    border-top: 8vw solid transparent;
+
+    content: '';
+  }
+
+  &__container {
+    @extend .container;
+  }
+
+  @include breakpoint(medium) {
+    padding-bottom: 60px;
+  }
+
+  @include breakpoint(large) {
+    padding-bottom: 120px;
+  }
+}
+
+.features {
+  padding-bottom: 310px;
+
+  background-image: url(../images/iphone-screen-1-3@1x.png), url(../images/iphone-case-1@1x.png);
+  background-repeat: no-repeat;
+  background-size: 142px auto, 158px auto;
+  background-position: center bottom;
+
+  @include retina {
+    background-image: url(../images/iphone-screen-1-3@2x.png), url(../images/iphone-case-1@2x.png);
+  }
+
+  @include retina(2.5) {
+    background-image: url(../images/iphone-screen-1-3@3x.png), url(../images/iphone-case-1@3x.png);
+  }
+
+  &__container {
+    @extend .container;
+  }
+
+  &__wrapper {
+    min-height: 420px;
+  }
+
+  &__feature {
+    text-align: center;
+  }
+
+  @include breakpoint(medium-only) {
+    padding-bottom: 20px;
+
+    &__feature {
+      text-align: left;
+    }
+  }
+
+  @include breakpoint(medium) {
+    background-image: url(../images/iphone-screen-2-3@1x.png);
+    background-position: 10% bottom;
+    background-size: 268px auto;
+
+    @include retina {
+      background-image: url(../images/iphone-screen-2-3@2x.png);
+    }
+  }
+
+  @include breakpoint(large) {
+    padding-bottom: 0;
+
+    background-image: none;
+
+    &__wrapper {
+      margin-top: -80px;
+    }
+
+    &__feature::before {
+      display: block;
+      width: 100%;
+      height: 310px;
+
+      background-image: url(../images/iphone-feature-large.png);
+      background-repeat: no-repeat;
+
+      content: '';
+    }
+  }
+}
+
+.effect-time {
+  display: none;
+
+  background-color: #fff;
+
+  &__container {
+    @extend .container;
+  }
+
+  &__wrapper {
+    padding-top: 60px;
+  }
+
+  &__clock {
+    text-align: center;
+
+    img {
+      width: 264px;
+      height: 306px;
+    }
+  }
+
+  &__description {
+    min-height: 360px;
+    padding-top: 30px;
+  }
+
+  &__read-more {
+    @extend .inner-link;
+  }
+
+  @include breakpoint(medium) {
+    display: block;
+  }
+
+  @include breakpoint(large) {
+    background-color: _color(bg);
+  }
+}
+
+.review-slider {
+  padding-top: 45px;
+
+  background-color: #fff;
+
+  .review-slider__container {
+    @extend .container;
+  }
+
+  .review-slider__text {
+    font-size: 18px;
+  }
+}

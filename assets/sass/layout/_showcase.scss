@@ -1,0 +1,212 @@
+.showcase {
+  position: relative;
+
+  min-height: 728px;
+
+  font-size: 18px;
+
+  color: #fff;
+  background-color: _color(primary);
+  background-image: url('../images/background-1@1x.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 458px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-image: url('../images/iphone-hand-1.png');
+    background-position: center 172px;
+    background-size: 258px auto;
+    background-repeat: no-repeat;
+
+    content: '';
+  }
+
+  @include retina {
+    background-image: url('../images/background-1@2x.jpg');
+
+    &::after {
+      background-image: url('../images/iphone-hand-1@2x.png');
+    }
+  }
+
+  @include retina(2.5) {
+    background-image: url('../images/background-1@3x.jpg');
+
+    &::after {
+      background-image: url('../images/iphone-hand-1@3x.png');
+    }
+  }
+
+  &__container {
+    @extend .container;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 10;
+
+    height: 100%;
+    padding-top: 214px - 26px;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__download-bar {
+    padding-top: 12px;
+
+    text-align: center;
+  }
+
+  &__download-btn {
+    display: block;
+    width: 280px;
+    height: 56px;
+    margin: 0 auto;
+    margin-bottom: 1.6rem;
+    padding-bottom: 4px;
+
+    text-align: center;
+
+    background-color: transparent;
+    border: 3px solid #fff;
+    @include border-radius(50px);
+
+    &:hover {
+      color: _color(accent);
+      background-color: #fff;
+      @include box-shadow(0 5px 7px 0 rgba(0, 0, 0, .25));
+    }
+
+    &:active {
+      color: transparentize(_color(accent), .7);
+    }
+  }
+
+  &__download-icons {
+    padding-bottom: .6rem;
+
+    .fa {
+      margin: 0 20px;
+    }
+
+    .fa-android {
+      color: #a4c639;
+    }
+
+    .fa-windows {
+      color: #00ADEF;
+    }
+  }
+
+  &__avaible-for {
+    width: 80%;
+    margin: auto;
+  }
+
+  // Breakpoints
+
+  @include breakpoint(small-only) {
+
+    &__wrapper {
+      padding-top: 72px;
+    }
+
+    &__download-bar {
+      position: absolute;
+      top: 485px;
+
+      width: 100%;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    background-image: url('../images/background-2@1x.jpg');
+    background-position: top center;
+    background-size: 1200px auto;
+
+    &::after {
+      background-image: url('../images/iphone-hand-2@1x.png');
+      background-size: 700px auto;
+      background-position: center 184px;
+    }
+
+    @include retina {
+      background-image: url('../images/background-2@2x.jpg');
+
+      &::after {
+        background-image:  url('../images/iphone-hand-2@2x.png');
+      }
+    }
+
+    @include retina(2.5) {
+      background-image: url('../images/background-2@3x.jpg');
+
+      &::after {
+        background-image: url('../images/iphone-hand-2@3x.png');
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    min-height: 854px;
+
+    background-image: url('../images/background-2@2x.jpg');
+    background-size: 2400px auto;
+
+    &::after {
+      background-image: url('../images/iphone-hand-3@1x.png');
+      background-size: 1050px auto;
+      background-position: bottom center;
+      @include transition(all 1.4s cubic-bezier(0.215, 0.61, 0.355, 1));
+    }
+
+    &__wrapper {
+      top: 0;
+      @include transition(all .8s cubic-bezier(0.215, 0.61, 0.355, 1));
+    }
+
+    body.loading & {
+
+      &__wrapper {
+        opacity: 0;
+        top: -40px;
+      }
+    }
+
+    body.loading-1 & {
+      
+      &::after {
+        opacity: 0;
+        background-position: bottom right;
+      }
+    }
+
+    @include retina {
+      background-image: url('../images/background-fullsize.jpg');
+
+      &::after {
+        background-image: url('../images/iphone-hand-3@2x.png');
+      }
+    }
+
+    @include retina(2.5) {
+      background-image: url('../images/background-fullsize.jpg');
+
+      &::after {
+        background-image: url('../images/iphone-hand-3@3x.png');
+      }
+    }
+  }
+}

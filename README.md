@@ -1,1 +1,1 @@
-# pink
+# Pink Responsive HTML5 Fucking Template

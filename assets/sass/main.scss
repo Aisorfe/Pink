@@ -1,0 +1,38 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+@include skel-breakpoints((
+  small-only: '(max-width: 639px)',
+  medium: '(min-width: 640px)',
+  medium-only: '(min-width: 640px) and (max-width: 1199px)',
+  large: '(min-width: 1200px)',
+  xlarge: '(min-width: 1440px)'
+));
+
+@include skel-layout((
+  reset: 'normalize',
+  boxModel: 'border',
+  containers: 87.5%,
+  grid: true,
+  breakpoints: (
+    medium: (
+      containers: 88.5%
+    ),
+    large: (
+      containers: 940px
+    )
+  )
+));
+
+@import 'compass/utilities';
+@import 'compass/typography';
+@import 'compass/css3';
+
+@import 'base/page';
+@import 'base/typography';
+
+@import 'layout/header.scss';
+@import 'layout/showcase.scss';
+@import 'layout/main.scss';

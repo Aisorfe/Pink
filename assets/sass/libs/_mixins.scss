@@ -1,0 +1,10 @@
+@mixin retina($pixel-ratio: 1.5) {
+
+  $min-resolution: $pixel-ratio * 96 + 'dpi';
+
+  @media only screen and (-webkit-min-device-pixel-ratio: $pixel-ratio),
+       only screen and (min-resolution: $min-resolution) {
+    @content;
+  }
+
+}
